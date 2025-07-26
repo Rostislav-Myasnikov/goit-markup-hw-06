@@ -174,7 +174,7 @@ button {
   background-color: #404bbf;
   position: absolute;
   left: 0;
-  bottom: 0px;
+  bottom: -1px;
   border-radius: 2px;
 }
 
@@ -715,11 +715,39 @@ button {
 
 .footer {
   background-color: #2e2f42;
-  padding: 100px 0;
+  padding: 96px 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding: 100px 0;
+  }
 }
 
 .logo-footer {
   display: inline-block;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 72px;
+}
+
+@media screen and (min-width: 767px) {
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-container {
+    flex-wrap: nowrap;
+  }
 }
 
 .footer-info {
@@ -745,19 +773,31 @@ button {
   justify-content: flex-start;
   color: #f4f4fd;
 }
-
 .footer-copy a {
-  display: inline-block;
+  display: in;
   margin-bottom: 16px;
-  justify-content: flex-start;
+  margin-right: 0;
 }
 
 .footer-copy {
-  margin-right: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 767px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-copy {
+    margin-right: 120px;
+  }
 }
 
 .social-footer {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .media-title {
@@ -767,11 +807,6 @@ button {
   letter-spacing: 0.02em;
   color: #ffffff;
   margin-bottom: 16px;
-}
-
-.footer-container {
-  display: flex;
-  align-items: baseline;
 }
 
 .social-link-footer {
@@ -833,7 +868,9 @@ button {
 
 .ipt-footer {
   display: flex;
+  flex-direction: column;
   gap: 24px;
+  align-items: center;
 }
 
 .plane-footer {
@@ -853,8 +890,14 @@ button {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
+  opacity: 0.6;
 }
 
+@media screen and (min-width: 1024px) {
+  .email-footer {
+    opacity: 1;
+  }
+}
 .email-footer::placeholder {
   color: #ffffff;
   font-weight: 400;
@@ -864,9 +907,11 @@ button {
 }
 
 .subscribe {
-  margin-left: 80px;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 .button-footer {
@@ -883,6 +928,7 @@ button {
   color: #ffffff;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 165px;
 }
 
 .button-footer:hover,
